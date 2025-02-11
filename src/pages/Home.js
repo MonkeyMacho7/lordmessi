@@ -7,7 +7,7 @@ const Home = () => {
 	const navigate = useNavigate(); 
 
 	const [isHovered, setIsHovered] = useState(false); 
-	const [buttonText, setButtonText] = useState("See His Live Stats");
+	const [buttonText, setButtonText] = useState("See His Stats");
 	const [liveScoresText, setLiveScoresText] = useState("Live Scores"); 
   
 	const handleStatsClick = () => {
