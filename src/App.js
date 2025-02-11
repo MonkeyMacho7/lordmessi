@@ -14,6 +14,7 @@ function App() {
         <nav className="navbar">
           <Link to="/">Home</Link>
           <Link to="/about">About Messi</Link>
+          <Link to="/stats">Live Stats</Link> 
         </nav>
 
         {/* Routes */}
