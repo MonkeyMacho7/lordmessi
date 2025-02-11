@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import errorImage from "../assets/notfound.png";
-import "./NotFound.css";
 
 const NotFound = () => {
   const [isVisible, setIsVisible] = useState(true);
