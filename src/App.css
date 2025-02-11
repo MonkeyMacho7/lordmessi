@@ -15,6 +15,12 @@
   margin: 20px 0;
   border: 5px solid #ffd700; 
   border-radius: 10px;
+  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.messi-img.glow {
+  border: 5px solid #ffdd00; /* Brighter gold */
+  box-shadow: 0px 0px 15px 5px rgba(255, 221, 0, 0.7);
 }
 
 .about {
