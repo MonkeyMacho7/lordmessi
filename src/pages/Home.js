@@ -1,18 +1,30 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 import goatImage from "../assets/goat.png";
 
 const Home = () => {
-	const [isHovered, setIsHovered] = useState(false);
-	const [buttonText, setButtonText] = useState("See His Live Stats");
+	const navigate = useNavigate(); 
 
-	const handleButtonClick = () => {
-	  setButtonText("Loading Stats..."); 
+	const [isHovered, setIsHovered] = useState(false); 
+	const [buttonText, setButtonText] = useState("See His Live Stats");
+	const [liveScoresText, setLiveScoresText] = useState("Live Scores"); 
+  
+	const handleStatsClick = () => {
+	  setButtonText("Loading Stats...");
 	  setTimeout(() => {
-		window.location.href = "/stats"; 
+		setButtonText("See His Live Stats");
+		navigate("/stats"); 
 	  }, 2000);
 	};
   
+	const handleLiveScoresClick = () => {
+	  setLiveScoresText("Loading Live Scores...");
+	  setTimeout(() => {
+		setLiveScoresText("Live Scores");
+		navigate("/livescores"); 
+	  }, 2000);
+	};
 
   return (
     <div className="home-container">
@@ -36,9 +48,15 @@ const Home = () => {
         <p>
           This website is dedicated to showcasing his legendary moments, live stats, and more.
         </p>
-        <button className="cta-button" onClick={handleButtonClick}>
-          {buttonText}
-        </button>
+        <div className="button-container">
+    	<button className="cta-button" onClick={handleStatsClick} disabled={buttonText.includes("Loading")}>
+      	{buttonText}
+    	</button>
+
+    	<button className="cta-button live-scores-btn" onClick={handleLiveScoresClick} disabled={liveScoresText.includes("Loading")}>
+     	 {liveScoresText}
+    		</button>
+  		</div>
       </section>
 
       {/* Quick Facts */}

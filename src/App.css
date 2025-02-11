@@ -111,20 +111,33 @@
   max-width: 700px;
 }
 
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .cta-button {
   display: inline-block;
-  margin-top: 15px;
   padding: 10px 20px;
   background-color: #ff3333;
   color: white;
-  text-decoration: none;
+  border: none;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 5px;
   transition: background 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .cta-button:hover {
   background-color: #cc0000;
+}
+
+.cta-button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }
 
 .intro {
@@ -203,6 +216,28 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
+
+.live-scores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #221F1F; 
+  color: #FF69B4; 
+  text-align: center;
+  padding: 20px;
+}
+
+.live-scores h1 {
+  font-size: 3rem;
+}
+
+.live-scores p {
+  font-size: 1.5rem;
+  max-width: 700px;
+}
+
 
 .highlights {
   display: flex;

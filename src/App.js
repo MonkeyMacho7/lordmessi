@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
+import LiveScores from "./pages/LiveScores";
 import Stats from "./pages/Stats";
 import Highlights from "./pages/Highlights";
 import './App.css';
@@ -15,7 +16,8 @@ function App() {
         <nav className="navbar">
           <Link to="/">Home</Link>
           <Link to="/about">About Messi</Link>
-          <Link to="/stats">Live Stats</Link> 
+          <Link to="/stats">Stats</Link> 
+          <Link to="/livescores">Live Scores</Link>
           <Link to="/highlights">Highlights</Link>
         </nav>
 
@@ -24,6 +26,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/stats" element={<Stats />} />
+          <Route path="/livescores" element={<LiveScores />} />
           <Route path="/highlights" element={<Highlights />} /> 
           <Route path="*" element={<NotFound />} />
         </Routes>
