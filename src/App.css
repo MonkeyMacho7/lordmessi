@@ -23,16 +23,41 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #002244; 
-  color: #ff8400; 
+  background-color: #A50044; 
+  color: #FDB913; 
   text-align: center;
+  padding: 20px;
+}
+
+.about h1 {
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .about img {
   max-width: 300px;
   margin: 20px 0;
-  border: 5px solid #ffd700;
+  border: 5px solid #FDB913; 
   border-radius: 10px;
+}
+
+.personal-story {
+  max-width: 700px;
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  border-left: 5px solid #004C98; 
+  border-right: 5px solid #004C98;
+}
+
+.personal-story h2 {
+  color: white;
+  font-size: 2rem;
+}
+
+.personal-story p {
+  font-size: 1.2rem;
+  color: #fff;
 }
 
 .navbar {
