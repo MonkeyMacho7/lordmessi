@@ -1,31 +1,30 @@
-/* Home Styles */
+
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #003366; /* Dark Blue */
-  color: #ffd700; /* Gold */
+  background-color: #43b7c3; 
+  color: #ffd700; 
   text-align: center;
 }
 
 .home img {
   max-width: 300px;
   margin: 20px 0;
-  border: 5px solid #ffd700; /* Gold Border */
+  border: 5px solid #ffd700; 
   border-radius: 10px;
 }
 
-/* About Styles */
 .about {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #002244; /* Navy Blue */
-  color: #ffd700; /* Gold */
+  background-color: #002244; 
+  color: #ff8400; 
   text-align: center;
 }
 
@@ -36,21 +35,20 @@
   border-radius: 10px;
 }
 
-/* NotFound Styles */
 .not-found {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #1a1a1a; /* Dark Gray */
-  color: #ff3333; /* Bright Red */
+  background-color: #1a1a1a; 
+  color: #ff3333; 
   text-align: center;
 }
 
 .not-found img {
   max-width: 300px;
   margin: 20px 0;
-  border: 5px solid #ff3333; /* Red Border */
+  border: 5px solid #ff3333; 
   border-radius: 10px;
 }
