@@ -1,6 +1,6 @@
 import React from 'react';
 import greatestImage from '../assets/greatest.png';
-import "../App.css;"
+import "../App.css";
 
 const About = () => {
   return (
