@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import goatImage from "../assets/goat.png";
 
 const Home = () => {
   return (
@@ -8,7 +9,7 @@ const Home = () => {
       <header className="hero">
         <h1>Welcome to Lord Messi</h1>
         <p className="subheading">The Greatest of All Time!</p>
-        <img src="/assets/messi-goat.jpg" alt="Messi Goat" className="messi-img" />
+        <img src={goatImage} alt="Messi Goat" className="messi-img" />
       </header>
 
       {/* Introduction Section */}
