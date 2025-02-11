@@ -6,6 +6,18 @@ const Highlights = () => {
     <div className="highlights">
       <h1>Enjoy...</h1>
       <p>Relive the greatest moments of Lionel Messi's career.</p>
+
+	  <div className="video-container">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/G4wTERfoPfA?autoplay=1&mute=1&loop=1&playlist=G4wTERfoPfA"
+          title="Messi Highlights"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        ></iframe>
+      </div>
     </div>
   );
 };

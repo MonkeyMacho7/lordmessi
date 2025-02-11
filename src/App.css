@@ -211,6 +211,19 @@
   color: white;
 }
 
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.video-container iframe {
+  width: 80%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 10px;
+}
 
 .not-found {
   display: flex;
