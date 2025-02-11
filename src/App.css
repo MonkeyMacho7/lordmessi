@@ -116,6 +116,30 @@
     padding: 10px;
   }
 }
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #221f1f; 
+  color: #f5a3c7; 
+  text-align: center;
+}
+
+.stats h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(245, 163, 199, 0.5); 
+}
+
+.stats p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .not-found {
   display: flex;
   flex-direction: column;
