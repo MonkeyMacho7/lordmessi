@@ -6,11 +6,11 @@ const About = () => {
   return (
     <div className="about">
       <h1>About Lord Messi</h1>
-      <p>This page is dedicated to Lionel Messi, the greatest footballer in history.</p>
+      <p>let's just call this my tribute to the greatest footballer to ever grace the pitch.</p>
       <img src={greatestImage} alt="Greatest Player" />
 
 	  <section className="personal-story">
-        <h2>My Journey as a Messi Fan ❤️💙</h2>
+        <h2>My Journey as a Messi Fan</h2>
         <p>
           I have been a devoted fan of Lionel Messi since **2007**. Growing up, I watched all of his games—
           every goal, every assist, every magical moment. Whether it was his breathtaking dribbles, 

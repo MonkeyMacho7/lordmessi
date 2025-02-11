@@ -24,7 +24,7 @@
   justify-content: center;
   min-height: 100vh;
   background-color: #A50044; 
-  color: #FDB913; 
+  color: #004C98; 
   text-align: center;
   padding: 20px;
 }
@@ -51,13 +51,13 @@
 }
 
 .personal-story h2 {
-  color: white;
+  color: #004C98;
   font-size: 2rem;
 }
 
 .personal-story p {
   font-size: 1.2rem;
-  color: #fff;
+  color: #004C98
 }
 
 .navbar {
@@ -111,8 +111,6 @@
   max-width: 700px;
   margin: 40px auto;
   padding: 20px;
-  border-left: 5px solid #ffd700; 
-  border-right: 5px solid #ffd700;
 }
 
 .intro h2 {
@@ -130,8 +128,6 @@
   margin: 40px auto;
   padding: 20px;
   border-radius: 10px;
-  border-left: 5px solid #ffd700; 
-  border-right: 5px solid #ffd700;
   font-size: 1.2rem;
 }
 
