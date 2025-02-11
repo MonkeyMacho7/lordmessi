@@ -3,6 +3,7 @@ import "../App.css";
 import goatImage from "../assets/goat.png";
 
 const Home = () => {
+	const [isHovered, setIsHovered] = useState(false);
 	const [buttonText, setButtonText] = useState("See His Live Stats");
 
 	const handleButtonClick = () => {
@@ -19,7 +20,9 @@ const Home = () => {
       <header className="hero">
         <h1>Welcome to Lord Messi</h1>
         <p className="subheading">The Greatest of All Time!</p>
-        <img src={goatImage} alt="Messi Goat" className="messi-img"/>
+        <img src={goatImage} alt="Messi Goat" className={`messi-img ${isHovered ? "glow" : ""}`}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}/>
       </header>
 
       {/* Introduction Section */}
@@ -27,7 +30,7 @@ const Home = () => {
         <h2>Why Lionel Messi is the GOAT 🐐</h2>
         <p>
           Lionel Messi is widely regarded as one of the greatest footballers of all time. 
-          With **8 Ballon d'Ors**, multiple Champions League victories, and an unforgettable 
+          With 8 Ballon d'Ors, multiple Champions League victories, and an unforgettable 
           World Cup win, his legacy is unmatched.
         </p>
         <p>
