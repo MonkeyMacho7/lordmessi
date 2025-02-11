@@ -28,12 +28,12 @@ const Home = () => {
 
       {/* Quick Facts */}
       <section className="quick-facts">
-        <h2>Messi's Achievements 📊</h2>
+        <h2>Messi's Achievements </h2>
         <ul>
-          <li>🏆 8x Ballon d'Or Winner</li>
-          <li>⚽ All-time Top Scorer for Barcelona</li>
-          <li>🌎 2022 FIFA World Cup Champion</li>
-          <li>🥇 Most Goals in a Calendar Year (91)</li>
+          <li> 8x Ballon d'Or Winner</li>
+          <li> All-time Top Scorer for Barcelona</li>
+          <li> 2022 FIFA World Cup Champion</li>
+          <li> Most Goals in a Calendar Year (91)</li>
         </ul>
       </section>
     </div>
