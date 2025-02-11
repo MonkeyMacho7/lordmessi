@@ -13,7 +13,7 @@ const Home = () => {
 	const handleStatsClick = () => {
 	  setButtonText("Loading Stats...");
 	  setTimeout(() => {
-		setButtonText("See His Live Stats");
+		setButtonText("See His Stats");
 		navigate("/stats"); 
 	  }, 2000);
 	};
