@@ -3,6 +3,16 @@ import "../App.css";
 import goatImage from "../assets/goat.png";
 
 const Home = () => {
+	const [buttonText, setButtonText] = useState("See His Live Stats");
+
+	const handleButtonClick = () => {
+	  setButtonText("Loading Stats..."); 
+	  setTimeout(() => {
+		window.location.href = "/stats"; 
+	  }, 2000);
+	};
+  
+
   return (
     <div className="home-container">
       {/* Hero Section */}
@@ -23,7 +33,9 @@ const Home = () => {
         <p>
           This website is dedicated to showcasing his legendary moments, live stats, and more.
         </p>
-        <a href="/stats" className="cta-button">See His Live Stats</a>
+        <button className="cta-button" onClick={handleButtonClick}>
+          {buttonText}
+        </button>
       </section>
 
       {/* Quick Facts */}
