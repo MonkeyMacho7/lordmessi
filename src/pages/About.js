@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="about">
       <h1>About Lord Messi</h1>
-      <p>let's just call this my tribute to the greatest footballer to ever grace the pitch.</p>
+      <p>Let's just call this my tribute to the greatest footballer to ever grace the pitch.</p>
       <img src={greatestImage} alt="Greatest Player" />
 
 	  <section className="personal-story">
