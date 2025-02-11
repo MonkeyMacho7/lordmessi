@@ -9,7 +9,7 @@ const Home = () => {
       <header className="hero">
         <h1>Welcome to Lord Messi</h1>
         <p className="subheading">The Greatest of All Time!</p>
-        <img src={goatImage} alt="Messi Goat"/>
+        <img src={goatImage} alt="Messi Goat" className="messi-img"/>
       </header>
 
       {/* Introduction Section */}
