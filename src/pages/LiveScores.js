@@ -19,10 +19,13 @@ const LiveScores = () => {
           params: {
             team: TEAM_ID,
             league: LEAGUE_ID,
-            season: SEASON
+            season: SEASON,
+			next: 2,  
+            last: 1, 
           },
         });
 
+        console.log("API Response:", response.data);
         setMatches(response.data.response);
       } catch (error) {
         console.error("Error fetching live scores:", error);
