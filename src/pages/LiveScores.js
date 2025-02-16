@@ -5,7 +5,7 @@ import "../App.css";
 const API_KEY = "f032a5db1eca1fdf3b0e2fab251c5e40"; 
 const TEAM_ID = 9568; 
 const LEAGUE_ID = 253; 
-const SEASON = 2024; 
+const SEASON = 2023; 
 
 const LiveScores = () => {
   const [matches, setMatches] = useState([]);
