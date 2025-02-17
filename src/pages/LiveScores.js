@@ -1,72 +1,80 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios"; 
-import "../App.css";
-
-const API_KEY = "f032a5db1eca1fdf3b0e2fab251c5e40"; 
-const TEAM_ID = 9568; 
-const LEAGUE_ID = 253; 
-const SEASON = 2023; 
+import axios from "axios";
+import "../App.css"; 
 
 const LiveScores = () => {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchMatches = async () => {
-      try {
-        const response = await axios.get("https://v3.football.api-sports.io/fixtures", {
-          headers: { "x-apisports-key": API_KEY },
-          params: {
-            team: TEAM_ID,
-            league: LEAGUE_ID,
-            season: SEASON,
-			next: 2,  
-            last: 1, 
-          },
-        });
+      setLoading(true);
+      setError("");
 
-        console.log("API Response:", response.data);
-        setMatches(response.data.response);
+      try {
+        const options = {
+          method: "GET",
+          url: "https://v3.football.api-sports.io/fixtures",
+          params: {
+            team: "9568", 
+            league: "253",  
+            season: "2023",  
+            last: "5",  
+          },
+          headers: {
+            "x-apisports-key": "f032a5db1eca1fdf3b0e2fab251c5e40",
+          },
+        };
+
+        const response = await axios.request(options);
+        console.log("API Response:", response.data); // Debugging Line
+
+        if (response.data.errors) {
+          setError("Error fetching matches. Check API limits.");
+          setLoading(false);
+          return;
+        }
+
+        if (response.data.response.length === 0) {
+          setError("No past matches found for 2023.");
+        } else {
+          setMatches(response.data.response);
+        }
       } catch (error) {
-        console.error("Error fetching live scores:", error);
-      } finally {
-        setLoading(false);
+        console.error("Error fetching match data:", error);
+        setError("Failed to fetch match data.");
       }
+
+      setLoading(false);
     };
 
     fetchMatches();
-    const interval = setInterval(fetchMatches, 30000); 
-    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="live-scores">
       <h1>Live Scores</h1>
-      <p>Let's see what Messi has to offer...</p>
+      <p>This will be my API.</p>
 
       {loading ? (
-        <p>Loading live scores...</p>
+        <p>Loading matches...</p>
+      ) : error ? (
+        <p className="error">{error}</p>
       ) : (
         <div className="matches-container">
-          {matches.length === 0 ? (
-            <p>No upcoming or live matches found.</p>
-          ) : (
-            matches.map((match) => (
-              <div key={match.fixture.id} className="match-card">
-                <h3>{match.teams.home.name} vs {match.teams.away.name}</h3>
-                <p>📅 {new Date(match.fixture.date).toLocaleString()}</p>
-                <p>🏆 {match.league.name}</p>
-                <p>📍 {match.fixture.venue.name}</p>
-                <p>
-                  {match.fixture.status.short === "FT"
-                    ? `Final Score: ${match.goals.home} - ${match.goals.away}`
-                    : match.fixture.status.short === "LIVE"
-                    ? `🔴 Live: ${match.goals.home} - ${match.goals.away}`
-                    : "Upcoming Match"}
-                </p>
+          {matches.map((match, index) => (
+            <div key={index} className="match-card">
+              <div className="teams">
+                <img src={match.teams.home.logo} alt={match.teams.home.name} />
+                <span>{match.teams.home.name}</span>
+                <strong>{match.goals.home} - {match.goals.away}</strong>
+                <span>{match.teams.away.name}</span>
+                <img src={match.teams.away.logo} alt={match.teams.away.name} />
               </div>
-            ))
-          )}
+              <p className="match-date">{new Date(match.fixture.date).toLocaleDateString()}</p>
+            </div>
+          ))}
         </div>
       )}
     </div>
