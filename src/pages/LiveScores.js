@@ -14,13 +14,14 @@ const LiveScores = () => {
         const fetchMatches = async () => {
             try {
                 const response = await axios.get(
-                    "https://v3.football.api-sports.io/fixtures",
+                    `https://v3.football.api-sports.io/fixtures?season=2023&team=9568&league=253&last=5`,
                     {
                         params: {
                             season: season,
                             team: teamId,
                             league: leagueId,
-                            last: 5, 
+							from: "2023-10-01", 
+            				to: "2023-12-31", 
                         },
                         headers: {
                             "x-apisports-key": apiKey,
