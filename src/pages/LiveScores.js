@@ -20,8 +20,8 @@ const LiveScores = () => {
                             season: season,
                             team: teamId,
                             league: leagueId,
-							from: "2023-10-01", 
-            				to: "2023-12-31", 
+							from: "2023-04-01", 
+            				to: "2023-07-31", 
                         },
                         headers: {
                             "x-apisports-key": apiKey,
