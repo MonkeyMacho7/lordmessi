@@ -218,60 +218,61 @@
 }
 
 .live-scores {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #221F1F; 
-  color: #FF69B4; 
   text-align: center;
+  padding-top: 30px; /* Moves the title & subtitle higher */
+}
+
+.live-scores-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff4da6;
+  margin-bottom: 5px;
+}
+
+.live-scores-subtitle {
+  font-size: 1.2rem;
+  color: #ff99cc;
+  margin-bottom: 30px;
+}
+
+/* Container for Fixtures (Side by Side) */
+.fixtures-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+/* Styling for Past & Future Fixtures */
+.past-fixtures, .future-fixtures {
+  width: 45%;
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
-}
-
-.live-scores h1 {
-  font-size: 3rem;
-}
-
-.live-scores p {
-  font-size: 1.5rem;
-  max-width: 700px;
-}
-
-.matches-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.match-card {
-  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  padding: 15px;
-  margin: 10px;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.teams {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+.past-fixtures h2, .future-fixtures h2 {
+  color: #ff4da6;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
 }
 
-.teams img {
-  width: 40px;
-  height: 40px;
+.past-fixtures ul, .future-fixtures ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.match-date {
-  margin-top: 5px;
-  color: #ddd;
-  font-size: 14px;
+.past-fixtures li, .future-fixtures li {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 10px;
 }
+
+.past-fixtures small, .future-fixtures small {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
 
 
 .highlights {
