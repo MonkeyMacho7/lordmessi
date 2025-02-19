@@ -5,49 +5,47 @@ import "../App.css";
 const LiveScores = () => {
     const [pastMatches, setPastMatches] = useState([]);
     const [futureMatches, setFutureMatches] = useState([]);
-    const apiKey = "f032a5db1eca1fdf3b0e2fab251c5e40"; // Replace with your valid API key
-    const season = "2024"; // Most recent season
-    const teamId = "9568";  // Inter Miami
-    const leagueId = "253"; // MLS or relevant league
+    const apiKey = "f032a5db1eca1fdf3b0e2fab251c5e40";
+    const season = "2025"; 
+    const teamId = "9568";  
+    const leagueId = "253"; 
 
     useEffect(() => {
         const fetchMatches = async () => {
             try {
-                // Fetch last 2 past games
-                const pastMatchesResponse = await axios.get(
-                    `https://v3.football.api-sports.io/fixtures`,
-                    {
-                        params: {
-                            season: season,
-                            team: teamId,
-                            league: leagueId,
-                            last: 2, // Fetch the last 2 past games
-                        },
-                        headers: {
-                            "x-apisports-key": apiKey,
-                        },
-                    }
-                );
+                const pastResponse = await axios.get(
+					`https://v3.football.api-sports.io/fixtures`,
+					{
+						params: {
+							season: "2025",
+							team: "9568", 
+							league: "253",
+							last: "2", 
+						},
+						headers: {
+							"x-apisports-key": apiKey,
+						},
+					}
+				);
+				console.log("Past Matches API Response:", pastResponse.data);
+				
 
-                // Fetch next 3 upcoming games
-                const futureMatchesResponse = await axios.get(
-                    `https://v3.football.api-sports.io/fixtures`,
-                    {
-                        params: {
-                            season: season,
-                            team: teamId,
-                            league: leagueId,
-                            next: 3, // Fetch the next 3 upcoming games
-                        },
-                        headers: {
-                            "x-apisports-key": apiKey,
-                        },
-                    }
-                );
-
-                console.log("Past Matches API Response:", pastMatchesResponse.data);
-                console.log("Future Matches API Response:", futureMatchesResponse.data);
-
+                const futureResponse = await axios.get(
+					`https://v3.football.api-sports.io/fixtures`,
+					{
+						params: {
+							season: "2025", 
+							team: "9568",
+							league: "253",
+							next: "3",  
+						},
+						headers: {
+							"x-apisports-key": apiKey,
+						},
+					}
+				);
+				console.log("Future Matches API Response:", futureResponse.data);
+				
                 setPastMatches(pastMatchesResponse.data.response || []);
                 setFutureMatches(futureMatchesResponse.data.response || []);
 
@@ -71,17 +69,19 @@ const LiveScores = () => {
                 <div className="past-fixtures">
                     <h2>Past Fixtures</h2>
                     {pastMatches.length > 0 ? (
-                        <ul>
-                            {pastMatches.map((match, index) => (
-                                <li key={index}>
-                                    {match.teams.home.name} {match.goals.home ?? "-"} - {match.goals.away ?? "-"} {match.teams.away.name} <br />
-                                    <small>{new Date(match.fixture.date).toLocaleDateString()}</small>
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p>No recent matches found.</p>
-                    )}
+    					<ul>
+        					{pastMatches.map((match, index) => (
+            					<li key={index}>
+                					<strong>{match.teams.home.name} {match.goals.home ?? "-"} - {match.goals.away ?? "-"} {match.teams.away.name}</strong>
+                					<br />
+                					<small>{new Date(match.fixture.date).toLocaleDateString()}</small>
+            					</li>
+        					))}
+    					</ul>
+				) : (
+    				<p>No recent matches found.</p>
+					)}
+
                 </div>
 
                 {/* Future Fixtures */}
