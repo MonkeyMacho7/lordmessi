@@ -221,7 +221,7 @@
   text-align: center;
   padding: 40px 20px;
   background-color: #221f1f; 
-  color: #ff4081; 
+  color: #f5a3c7; 
   min-height: 100vh;
 }
 
@@ -229,7 +229,7 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #ff4081; 
+  color: #f5a3c7; 
 }
 
 .live-scores p {
@@ -256,7 +256,7 @@
 .past-matches h2,
 .future-matches h2 {
   font-size: 1.8rem;
-  color: #ff4081; 
+  color: #f5a3c7; 
   margin-bottom: 15px;
 }
 
@@ -270,7 +270,7 @@
 .future-matches li {
   font-size: 1.2rem;
   margin-bottom: 15px;
-  background: #1e1e1e; 
+  background: #747373; 
   padding: 12px;
   border-radius: 8px;
   box-shadow: 2px 2px 10px rgba(255, 64, 129, 0.2);
@@ -279,11 +279,11 @@
 }
 
 .past-matches li {
-  border-left: 5px solid #ff4081; 
+  border-left: 5px solid #f5a3c7; 
 }
 
 .future-matches li {
-  border-left: 5px solid #ff80ab; 
+  border-left: 5px solid #f5a3c7; 
 }
 
 .future-matches li:hover,
