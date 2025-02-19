@@ -68,7 +68,7 @@ const LiveScores = () => {
 
     return (
         <div className="live-scores">
-            <h1>Live Scores</h1>
+            <h1>Messi's Matchday</h1>
             <p>Let's see what Messi has to offer...</p>
 
             <div className="match-container">

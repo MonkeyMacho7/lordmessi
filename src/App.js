@@ -17,7 +17,7 @@ function App() {
           <Link to="/">Home</Link>
           <Link to="/about">About Messi</Link>
           <Link to="/stats">Stats</Link> 
-          <Link to="/livescores">Live Scores</Link>
+          <Link to="/livescores">Messi's Matchday</Link>
           <Link to="/highlights">Highlights</Link>
         </nav>
 
