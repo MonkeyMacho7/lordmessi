@@ -219,58 +219,57 @@
 
 .live-scores {
   text-align: center;
-  padding-top: 30px; /* Moves the title & subtitle higher */
+  padding: 40px 20px;
 }
 
-.live-scores-title {
+.live-scores h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #ff4da6;
   margin-bottom: 5px;
 }
 
-.live-scores-subtitle {
+.live-scores p {
   font-size: 1.2rem;
-  color: #ff99cc;
-  margin-bottom: 30px;
+  color: #888;
+  margin-bottom: 40px;
 }
 
-/* Container for Fixtures (Side by Side) */
-.fixtures-container {
+.match-container {
   display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 20px;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Styling for Past & Future Fixtures */
-.past-fixtures, .future-fixtures {
+.past-matches,
+.future-matches {
   width: 45%;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
+  text-align: center;
 }
 
-.past-fixtures h2, .future-fixtures h2 {
-  color: #ff4da6;
+.past-matches h2,
+.future-matches h2 {
   font-size: 1.8rem;
+  color: #e91e63;
   margin-bottom: 15px;
 }
 
-.past-fixtures ul, .future-fixtures ul {
-  list-style-type: none;
+.past-matches ul,
+.future-matches ul {
+  list-style: none; 
   padding: 0;
 }
 
-.past-fixtures li, .future-fixtures li {
+.past-matches li,
+.future-matches li {
   font-size: 1.2rem;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.past-fixtures small, .future-fixtures small {
-  font-size: 0.9rem;
-  color: #aaa;
+  margin-bottom: 15px;
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 
