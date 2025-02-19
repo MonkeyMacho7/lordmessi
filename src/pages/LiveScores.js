@@ -12,7 +12,7 @@ const LiveScores = () => {
     useEffect(() => {
         const fetchMatches = async () => {
             try {
-                const response = await axios.get(
+                const pastMatchesResponse = await axios.get(
                     `https://v3.football.api-sports.io/fixtures`,
                     {
                         params: {
@@ -20,6 +20,20 @@ const LiveScores = () => {
                             team: teamId,
                             league: leagueId,
                             last: 2, 
+                        },
+                        headers: {
+                            "x-apisports-key": apiKey,
+                        },
+                    }
+                );
+
+                const futureMatchesResponse = await axios.get(
+                    `https://v3.football.api-sports.io/fixtures`,
+                    {
+                        params: {
+                            season: season,
+                            team: teamId,
+                            league: leagueId,
                             next: 3, 
                         },
                         headers: {
@@ -28,13 +42,17 @@ const LiveScores = () => {
                     }
                 );
 
-                console.log("API Response:", response.data);
+                console.log("Past Matches API Response:", pastMatchesResponse.data);
+                console.log("Future Matches API Response:", futureMatchesResponse.data);
 
-                if (response.data.response.length > 0) {
-                    setMatches(response.data.response);
-                } else {
-                    setMatches([]);
-                }
+                
+                const allMatches = [
+                    ...(pastMatchesResponse.data.response || []),
+                    ...(futureMatchesResponse.data.response || [])
+                ];
+
+                setMatches(allMatches);
+
             } catch (error) {
                 console.error("Error fetching matches:", error);
             }
