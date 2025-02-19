@@ -220,17 +220,21 @@
 .live-scores {
   text-align: center;
   padding: 40px 20px;
+  background-color: #121212; 
+  color: #ff4081; 
+  min-height: 100vh;
 }
 
 .live-scores h1 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 5px;
+  color: #ff4081; 
 }
 
 .live-scores p {
   font-size: 1.2rem;
-  color: #888;
+  color: #bdbdbd;
   margin-bottom: 40px;
 }
 
@@ -252,13 +256,13 @@
 .past-matches h2,
 .future-matches h2 {
   font-size: 1.8rem;
-  color: #e91e63;
+  color: #ff4081; 
   margin-bottom: 15px;
 }
 
 .past-matches ul,
 .future-matches ul {
-  list-style: none; 
+  list-style: none;
   padding: 0;
 }
 
@@ -266,13 +270,29 @@
 .future-matches li {
   font-size: 1.2rem;
   margin-bottom: 15px;
-  background: #f8f8f8;
-  padding: 10px;
+  background: #1e1e1e; 
+  padding: 12px;
   border-radius: 8px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 10px rgba(255, 64, 129, 0.2);
+  color: white;
+  font-weight: bold;
 }
 
+.past-matches li {
+  border-left: 5px solid #ff4081; 
+}
 
+.future-matches li {
+  border-left: 5px solid #ff80ab; 
+}
+
+.future-matches li:hover,
+.past-matches li:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+  box-shadow: 4px 4px 15px rgba(255, 64, 129, 0.5);
+  background: #292929;
+}
 
 .highlights {
   display: flex;
