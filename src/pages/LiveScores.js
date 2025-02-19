@@ -5,10 +5,9 @@ import "../App.css";
 const LiveScores = () => {
     const [pastMatches, setPastMatches] = useState([]);
     const [futureMatches, setFutureMatches] = useState([]);
-
     const apiKey = "f032a5db1eca1fdf3b0e2fab251c5e40";
-    const season = "2025";
-    const teamId = "9568";
+    const season = "2025"; 
+    const teamId = "9568"; 
     const leagueId = "253"; 
 
     useEffect(() => {
@@ -21,9 +20,11 @@ const LiveScores = () => {
                             season: season,
                             team: teamId,
                             league: leagueId,
-                            last: "2",
+                            last: 2,
                         },
-                        headers: { "x-apisports-key": apiKey },
+                        headers: {
+                            "x-apisports-key": apiKey,
+                        },
                     }
                 );
 
@@ -31,6 +32,8 @@ const LiveScores = () => {
 
                 if (pastResponse.data.response.length > 0) {
                     setPastMatches(pastResponse.data.response);
+                } else {
+                    setPastMatches([]);
                 }
 
                 const futureResponse = await axios.get(
@@ -40,9 +43,11 @@ const LiveScores = () => {
                             season: season,
                             team: teamId,
                             league: leagueId,
-                            next: "3",
+                            next: 3,
                         },
-                        headers: { "x-apisports-key": apiKey },
+                        headers: {
+                            "x-apisports-key": apiKey,
+                        },
                     }
                 );
 
@@ -50,8 +55,9 @@ const LiveScores = () => {
 
                 if (futureResponse.data.response.length > 0) {
                     setFutureMatches(futureResponse.data.response);
+                } else {
+                    setFutureMatches([]);
                 }
-
             } catch (error) {
                 console.error("Error fetching matches:", error);
             }
@@ -60,7 +66,7 @@ const LiveScores = () => {
         fetchMatches();
     }, []);
 
-	return (
+    return (
         <div className="live-scores">
             <h1>Live Scores</h1>
             <p>Let's see what Messi has to offer...</p>
@@ -104,5 +110,6 @@ const LiveScores = () => {
             </div>
         </div>
     );
-}
+};
+
 export default LiveScores;
