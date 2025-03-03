@@ -1,18 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";  
+import { AuthProvider } from "./context/AuthContext"; 
 import Home from "./pages/Home";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import LiveScores from "./pages/LiveScores";
 import Stats from "./pages/Stats";
 import Highlights from "./pages/Highlights";
+import Login from "./pages/Login";
 import "./App.css";
 
 function App() {
   return (
-    <AuthProvider> {}
-      <Router>
+    <AuthProvider>
+      <Router> {/* 👈 This wraps everything */}
         <div>
           {/* Navigation Bar */}
           <nav className="navbar">
@@ -21,6 +22,7 @@ function App() {
             <Link to="/stats">Stats</Link>
             <Link to="/livescores">Messi's Matchday</Link>
             <Link to="/highlights">Highlights</Link>
+            <Link to="/login">Login</Link> {/* Added Login link */}
           </nav>
 
           {/* Routes */}
@@ -30,6 +32,7 @@ function App() {
             <Route path="/stats" element={<Stats />} />
             <Route path="/livescores" element={<LiveScores />} />
             <Route path="/highlights" element={<Highlights />} />
+            <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

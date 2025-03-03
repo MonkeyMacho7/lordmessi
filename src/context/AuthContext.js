@@ -1,28 +1,21 @@
-import React, { createContext, useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { createContext, useState } from "react";
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  
-  const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const login = (username) => {
-    setUser(username);
-    navigate("/"); 
+  const login = () => {
+    setIsAuthenticated(true);
   };
 
   const logout = () => {
-    setUser(null);
-    navigate("/login"); 
+    setIsAuthenticated(false);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
-
-export const useAuth = () => useContext(AuthContext);
