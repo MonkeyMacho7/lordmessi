@@ -5,7 +5,8 @@ import "../App.css";
 const LiveScores = () => {
     const [pastMatches, setPastMatches] = useState([]);
     const [futureMatches, setFutureMatches] = useState([]);
-    const apiKey = "f032a5db1eca1fdf3b0e2fab251c5e40";
+    const apiKey = process.env.REACT_APP_API_KEY;
+	console.log("API Key:", apiKey);
     const season = "2025"; 
     const teamId = "9568"; 
     const leagueId = "253"; 
@@ -72,7 +73,6 @@ const LiveScores = () => {
             <p>Let's see what Messi has to offer...</p>
 
             <div className="match-container">
-                {/* ✅ Past Fixtures */}
                 <div className="past-matches">
                     <h2>Past Fixtures</h2>
                     {pastMatches.length > 0 ? (
@@ -90,7 +90,6 @@ const LiveScores = () => {
                     )}
                 </div>
 
-                {/* ✅ Future Fixtures */}
                 <div className="future-matches">
                     <h2>Future Fixtures</h2>
                     {futureMatches.length > 0 ? (

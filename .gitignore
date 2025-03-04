@@ -5,7 +5,7 @@ node_modules/
 build/
 dist/
 out/
-
+.env
 # misc
 .DS_Store
 *.log
