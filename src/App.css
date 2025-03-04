@@ -330,6 +330,19 @@
   border-radius: 10px;
 }
 
+.login-title {
+  color: #a50044; 
+  font-size: 2.5rem;  
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.login-subtitle {
+  color: #444;
+  font-size: 1.4rem; 
+  margin-bottom: 20px;
+}
+
 .login-container {
   background: white;
   display: flex;
