@@ -14,7 +14,7 @@ const LiveScores = () => {
 
         const fetchMatches = async () => {
             if (!apiKey) {
-                console.error("API Key is missing!");
+                console.error("API Key is missing");
                 return;
             }
 
