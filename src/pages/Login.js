@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
-import "../App.css";
+import "../styles/Login.css";
 
 const Login = () => {
     const { login } = useAuth();
@@ -14,22 +14,22 @@ const Login = () => {
 
     return (
         <div className="login-container">
-            <h2>Login</h2>
-            <p>Please enter your credentials to access the site.</p>
-            <form onSubmit={handleSubmit}>
+            <h2 style={{ color: "#a50044" }}>Login</h2>
+            <p style={{ color: "#444", marginBottom: "20px" }}>
+                Please enter your credentials to access the site.
+            </p>
+            <form onSubmit={handleSubmit} className="login-box">
                 <input
                     type="text"
                     placeholder="Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    required
                 />
                 <input
                     type="password"
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    required
                 />
                 <button type="submit">Login</button>
             </form>
