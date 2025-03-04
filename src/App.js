@@ -29,10 +29,10 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/stats" element={<Stats />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/highlights" element={<Highlights />} />
 
                     {/* 🔒 Protected Routes */}
                     <Route path="/livescores" element={<PrivateRoute element={<LiveScores />} />} />
-                    <Route path="/highlights" element={<PrivateRoute element={<Highlights />} />} />
 
                     <Route path="*" element={<NotFound />} />
                 </Routes>
