@@ -5,14 +5,20 @@ import "../App.css";
 const LiveScores = () => {
     const [pastMatches, setPastMatches] = useState([]);
     const [futureMatches, setFutureMatches] = useState([]);
-    const apiKey = process.env.REACT_APP_API_KEY;
-	console.log("API Key:", apiKey);
-    const season = "2025"; 
-    const teamId = "9568"; 
-    const leagueId = "253"; 
-
+    
     useEffect(() => {
+        const apiKey = process.env.REACT_APP_API_KEY;
+        console.log("API Key:", apiKey);
+        const season = "2025"; 
+        const teamId = "9568"; 
+        const leagueId = "253"; 
+
         const fetchMatches = async () => {
+            if (!apiKey) {
+                console.error("API Key is missing!");
+                return;
+            }
+
             try {
                 const pastResponse = await axios.get(
                     `https://v3.football.api-sports.io/fixtures`,
@@ -30,12 +36,7 @@ const LiveScores = () => {
                 );
 
                 console.log("Past Matches API Response:", pastResponse.data);
-
-                if (pastResponse.data.response.length > 0) {
-                    setPastMatches(pastResponse.data.response);
-                } else {
-                    setPastMatches([]);
-                }
+                setPastMatches(pastResponse.data.response || []);
 
                 const futureResponse = await axios.get(
                     `https://v3.football.api-sports.io/fixtures`,
@@ -53,12 +54,7 @@ const LiveScores = () => {
                 );
 
                 console.log("Future Matches API Response:", futureResponse.data);
-
-                if (futureResponse.data.response.length > 0) {
-                    setFutureMatches(futureResponse.data.response);
-                } else {
-                    setFutureMatches([]);
-                }
+                setFutureMatches(futureResponse.data.response || []);
             } catch (error) {
                 console.error("Error fetching matches:", error);
             }
