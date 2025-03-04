@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
-import "../styles/App.css";
+import "../App.css";
 
 const Login = () => {
     const { login } = useAuth();
@@ -13,9 +13,9 @@ const Login = () => {
     };
 
     return (
-        <div className="login-container">
-    <h2 className="login-title">Login</h2>
-    <p className="login-subtitle">
+    	<div className="login-container">
+    	<h2 className="login-title">Login</h2>
+   		 <p className="login-subtitle">
         Please enter your credentials to access the site.
     </p>
     <form onSubmit={handleSubmit} className="login-box">
