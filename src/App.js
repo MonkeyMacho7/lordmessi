@@ -13,8 +13,8 @@ import "./App.css";
 
 function App() {
     return (
-        <AuthProvider>
-            <Router>
+        <Router> 
+            <AuthProvider> 
                 <nav className="navbar">
                     <Link to="/">Home</Link>
                     <Link to="/about">About Messi</Link>
@@ -30,14 +30,14 @@ function App() {
                     <Route path="/stats" element={<Stats />} />
                     <Route path="/login" element={<Login />} />
 
-                    {/*PROTECTED ROUTES */}
+                    {/* 🔒 Protected Routes */}
                     <Route path="/livescores" element={<PrivateRoute element={<LiveScores />} />} />
                     <Route path="/highlights" element={<PrivateRoute element={<Highlights />} />} />
 
                     <Route path="*" element={<NotFound />} />
                 </Routes>
-            </Router>
-        </AuthProvider>
+            </AuthProvider>
+        </Router>
     );
 }
 
