@@ -8,7 +8,6 @@ const LiveScores = () => {
     
     useEffect(() => {
         const apiKey = process.env.REACT_APP_API_KEY;
-        console.log("API Key:", apiKey);
         const season = "2025"; 
         const teamId = "9568"; 
         const leagueId = "253"; 

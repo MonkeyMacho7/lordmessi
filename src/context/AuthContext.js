@@ -1,21 +1,30 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export const AuthContext = createContext();
+const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
-  const login = () => {
-    setIsAuthenticated(true);
-  };
+    const login = (username, password) => {
+        console.log("Logging in:", username);
+        setTimeout(() => {
+            setUser({ username });
+            navigate("/livescores"); 
+        }, 1000); 
+    };
 
-  const logout = () => {
-    setIsAuthenticated(false);
-  };
+    const logout = () => {
+        setUser(null);
+        navigate("/login");
+    };
 
-  return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
+    return (
+        <AuthContext.Provider value={{ user, login, logout }}>
+            {children}
+        </AuthContext.Provider>
+    );
 };
+
+export const useAuth = () => useContext(AuthContext);
