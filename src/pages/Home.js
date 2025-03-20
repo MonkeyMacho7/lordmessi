@@ -28,7 +28,6 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* Hero Section */}
       <header className="hero">
         <h1>Welcome to Lord Messi</h1>
         <p className="subheading">The Greatest of All Time!</p>
@@ -37,7 +36,6 @@ const Home = () => {
           onMouseLeave={() => setIsHovered(false)}/>
       </header>
 
-      {/* Introduction Section */}
       <section className="intro">
         <h2>Why Lionel Messi is the GOAT 🐐</h2>
         <p>
@@ -59,7 +57,6 @@ const Home = () => {
   		</div>
       </section>
 
-      {/* Quick Facts */}
       <section className="quick-facts">
         <h2>Messi's Achievements </h2>
         <ul>

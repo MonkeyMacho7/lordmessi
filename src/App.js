@@ -31,7 +31,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/highlights" element={<Highlights />} />
 
-                    {/* 🔒 Protected Routes */}
+                    {/*Protected Routes */}
                     <Route path="/livescores" element={<PrivateRoute element={<LiveScores />} />} />
 
                     <Route path="*" element={<NotFound />} />
