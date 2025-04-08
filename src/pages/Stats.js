@@ -15,20 +15,20 @@ const Stats = () => {
       })
       .catch((error) => {
         console.error("Error fetching stats:", error);
-        setError("Could not load stats.");
+        setError("Could not load messi stats.");
         setLoading(false);
       });
   }, []);
 
-  if (loading) return <p>Loading stats...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p className="stats-loading">Loading stats...</p>;
+  if (error) return <p className="stats-error">{error}</p>;
 
   return (
-    <div className="stats-page">
-      <h1>Messi's Season Stats</h1>
+    <div className="stats-container">
+      <h1 className="stats-title">Messi's Season Stats</h1>
       <div className="stats-grid">
         {stats.map((stat, index) => (
-          <div key={index} className="stat-card">
+          <div key={index} className="stats-card">
             <h2>{stat.team} – {stat.season}</h2>
             <p>Matches: {stat.matches}</p>
             <p>Goals: {stat.goals}</p>
