@@ -8,7 +8,7 @@ const Stats = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/stats")
+    axios.get("http://3.144.172.68:8000/stats")
       .then((response) => {
         setStats(response.data);
         setLoading(false);
