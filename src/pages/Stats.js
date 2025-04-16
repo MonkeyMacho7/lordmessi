@@ -8,7 +8,7 @@ const Stats = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios.get("https://3.144.172.68:8000/stats")
+    axios.get("https://gz0gp3ko1i.execute-api.us-east-2.amazonaws.com/prod")
       .then((response) => {
         setStats(response.data);
         setLoading(false);
