@@ -4,20 +4,27 @@ import "../App.css";
 
 const Stats = () => {
   const [stats, setStats] = useState([]);
+  const [allTimeStats, setAllTimeStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios.get("https://gz0gp3ko1i.execute-api.us-east-2.amazonaws.com/prod/stats")
-      .then((response) => {
-        setStats(response.data);
+    const fetchStats = async () => {
+      try {
+        const seasonRes = await axios.get("https://gz0gp3ko1i.execute-api.us-east-2.amazonaws.com/prod/stats");
+        const allTimeRes = await axios.get("https://gz0gp3ko1i.execute-api.us-east-2.amazonaws.com/prod/all-time");
+
+        setStats(seasonRes.data);
+        setAllTimeStats(allTimeRes.data);
         setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching stats:", error);
+      } catch (err) {
+        console.error("Error fetching stats:", err);
         setError("Could not load messi stats.");
         setLoading(false);
-      });
+      }
+    };
+
+    fetchStats();
   }, []);
 
   if (loading) return <p className="stats-loading">Loading stats...</p>;
@@ -36,6 +43,20 @@ const Stats = () => {
           </div>
         ))}
       </div>
+
+      {allTimeStats && (
+        <>
+          <h1 className="stats-title" style={{ marginTop: "3rem" }}>Messi's All Time Stats</h1>
+          <div className="stats-grid">
+            <div className="stats-card">
+              <p>Games Played: {allTimeStats.games_played}</p>
+              <p>Goals: {allTimeStats.goals}</p>
+              <p>Assists: {allTimeStats.assists}</p>
+              <p>Trophies Won: {allTimeStats.trophies_won}</p>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
