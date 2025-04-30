@@ -11,8 +11,8 @@ const videoData = [
     src: "https://www.youtube.com/embed/ZmKy_fnRM_E?start=5"
   },
   {
-    title: "The King of Football",
-    src: "https://www.youtube.com/embed/p693u53Q10U?start=34"
+    title: "The GOAT of Football",
+    src: "https://www.youtube.com/watch?v=G4wTERfoPfA&t=1s"
   }
 ];
 
