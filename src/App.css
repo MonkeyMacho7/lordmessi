@@ -330,6 +330,16 @@
   border-radius: 10px;
 }
 
+.video-section {
+  margin-bottom: 40px;
+}
+
+.video-title {
+  color: #f5a3c7;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
 .login-title {
   color: #a50044; 
   font-size: 2.5rem;  
