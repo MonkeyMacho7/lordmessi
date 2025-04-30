@@ -12,7 +12,7 @@ const videoData = [
   },
   {
     title: "The GOAT of Football",
-    src: "https://www.youtube.com/watch?v=G4wTERfoPfA&t=1s"
+    src: "https://youtu.be/G4wTERfoPfA?si=XPrL7LCRrCeOVgxg"
   }
 ];
 
